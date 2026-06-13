@@ -1,5 +1,5 @@
 {% set name = "test-drive" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name }}-pkg
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/fortran-lang/test-drive/releases/download/v{{ version }}/test-drive-{{ version }}.tar.xz
-  sha256: dca77ab3c646b99945f4a3cb75eb8c9885123a55cd509b8992307fabf7e7d07b
+  sha256: 04452f0ca631bcb19c7cb937961457e17710d9c883deeee3c56e128e464b750f
 
 build:
-  number: 2
+  number: 0
 
 outputs:
   - name: {{ name }}
-    script: build_pkg.sh   # [unix]
+    script: build_pkg.sh  # [unix]
     script: build_pkg.bat  # [win]
     build:
       string: {{ module_abi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
